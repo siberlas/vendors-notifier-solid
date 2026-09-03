@@ -25,5 +25,11 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
+      - name: CS Fixer check
+        run: ./vendor/bin/php-cs-fixer fix --dry-run --diff
+
+      - name: PHPStan analyse
+        run: ./vendor/bin/phpstan analyse   
+        
       - name: Run tests
         run: ./vendor/bin/phpunit
