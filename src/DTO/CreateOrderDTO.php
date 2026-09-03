@@ -10,5 +10,6 @@ class CreateOrderDTO
         public readonly int $vendorId,
         public readonly string $productName,
         public readonly float $price,
-    ){}
+    ) {
+    }
 }

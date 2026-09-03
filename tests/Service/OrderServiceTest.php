@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Tests\Service;
 
 use App\DTO\CreateOrderDTO;
-use App\Entity\Vendor;
 use App\Entity\Order;
-use App\Service\OrderService;
+use App\Entity\Vendor;
 use App\Interface\OrderRepositoryInterface;
-use PHPUnit\Framework\TestCase;
 use App\Service\NotificationService;
+use App\Service\OrderService;
 use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 class OrderServiceTest extends TestCase
 {
@@ -25,7 +25,7 @@ class OrderServiceTest extends TestCase
         $this->notificationServiceMock = $this->createMock(NotificationService::class);
 
         $this->orderService = new OrderService(
-            $this->notificationServiceMock, 
+            $this->notificationServiceMock,
             $this->orderRepositoryMock
         );
     }
@@ -47,7 +47,7 @@ class OrderServiceTest extends TestCase
         $this->orderRepositoryMock
             ->expects($this->once())
             ->method('save');
-    
+
         $this->notificationServiceMock
             ->expects($this->once())
             ->method('notify');
@@ -74,7 +74,7 @@ class OrderServiceTest extends TestCase
         $this->notificationServiceMock
             ->expects($this->never())
             ->method('notify');
-        
+
         $orderDto = new CreateOrderDTO(
             vendorId: 1,
             productName: 'testK',

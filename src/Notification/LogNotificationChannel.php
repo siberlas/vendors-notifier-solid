@@ -10,14 +10,15 @@ use Psr\Log\LoggerInterface;
 
 class LogNotificationChannel implements NotificationChannelInterface
 {
-      public function __construct(
+    public function __construct(
         private readonly LoggerInterface $logger,
-    ){}
+    ) {
+    }
 
-    public function send(Order $order): void 
+    public function send(Order $order): void
     {
         $this->logger->info(
-                sprintf(
+            sprintf(
                 "[LOG] Notification envoyée à %s (%s) pour la commande #%d — %s (%.2f€)\n",
                 $order->getVendor()->getName(),
                 $order->getVendor()->getEmail(),

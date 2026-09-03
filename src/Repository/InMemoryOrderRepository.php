@@ -10,14 +10,17 @@ use App\Interface\OrderRepositoryInterface;
 
 class InMemoryOrderRepository implements OrderRepositoryInterface
 {
+    /** @var array<int, Vendor> */
     private array $vendors;
-    private array $orders = [];
+
+    /** @var array<int, Order> */
+    private array $orders = []; // @phpstan-ignore property.onlyWritten
 
     public function __construct()
     {
         $this->vendors = [
             1 => new Vendor(1, 'Alice Diallo', 'alice@tobili.com'),
-            2 => new Vendor(2,'Bob Koné', 'bob@tobili.com'),
+            2 => new Vendor(2, 'Bob Koné', 'bob@tobili.com'),
         ];
     }
 

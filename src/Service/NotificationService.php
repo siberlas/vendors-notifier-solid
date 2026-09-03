@@ -14,11 +14,12 @@ class NotificationService
      */
     public function __construct(
         private readonly iterable $channels,
-    ){}
+    ) {
+    }
 
     public function notify(Order $order): void
     {
-        foreach($this->channels as $channel) {
+        foreach ($this->channels as $channel) {
             $channel->send($order);
         }
     }

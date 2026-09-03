@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-class Order 
+class Order
 {
     private readonly string $status;
     private readonly \DateTimeImmutable $createdAt;
@@ -14,7 +14,7 @@ class Order
         private readonly Vendor $vendor,
         private readonly string $productName,
         private readonly float $price,
-    ){
+    ) {
         $this->status = 'pending';
         $this->createdAt = new \DateTimeImmutable();
     }
@@ -33,7 +33,7 @@ class Order
     {
         return $this->productName;
     }
-    
+
     public function getPrice(): float
     {
         return $this->price;

@@ -7,18 +7,20 @@ namespace App\Service;
 use App\DTO\CreateOrderDTO;
 use App\Entity\Order;
 use App\Interface\OrderRepositoryInterface;
+
 class OrderService
 {
     public function __construct(
         private readonly NotificationService $notifier,
         private readonly OrderRepositoryInterface $inMemory,
-    ){}
+    ) {
+    }
 
     public function createOrder(CreateOrderDTO $dto): Order
     {
         $vendor = $this->inMemory->findVendorById($dto->vendorId);
 
-        if($vendor === null) {
+        if ($vendor === null) {
             throw new \InvalidArgumentException(
                 sprintf('Vendor avec l\'id %d introuvable', $dto->vendorId)
             );
