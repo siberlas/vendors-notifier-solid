@@ -13,6 +13,14 @@ class InMemoryOrderRepository implements OrderRepositoryInterface
     private array $vendors;
     private array $orders = [];
 
+    public function __construct()
+    {
+        $this->vendors = [
+            1 => new Vendor(1, 'Alice Diallo', 'alice@tobili.com'),
+            2 => new Vendor(2,'Bob Koné', 'bob@tobili.com'),
+        ];
+    }
+
 
     public function findVendorById(int $id): ?Vendor
     {
