@@ -1,5 +1,6 @@
 # Vendors Notifier — Pratique SOLID avec Symfony 6.4
 
+![CI](https://github.com/siberlas/vendors-notifier-solid/actions/workflows/ci.yml/badge.svg)
 ![PHP](https://img.shields.io/badge/PHP-8.3-blue)
 ![Symfony](https://img.shields.io/badge/Symfony-6.4-black)
 ![PHPUnit](https://img.shields.io/badge/Tests-PHPUnit%2012-green)
