@@ -24,7 +24,6 @@ class InMemoryOrderRepository implements OrderRepositoryInterface
         ];
     }
 
-
     public function findVendorById(int $id): ?Vendor
     {
         return $this->vendors[$id] ?? null;

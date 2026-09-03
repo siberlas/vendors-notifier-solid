@@ -40,9 +40,9 @@ class NotifyVendorCommand extends Command
     ): int {
         $io = new SymfonyStyle($input, $output);
         $dryRun = $input->getOption('dry-run');
-        $vendorId = (int)$input->getArgument('vendorId');
-        $productName = (string)$input->getArgument('productName');
-        $price = (float)$input->getArgument('price');
+        $vendorId = (int) $input->getArgument('vendorId');
+        $productName = (string) $input->getArgument('productName');
+        $price = (float) $input->getArgument('price');
 
         $io->title('Création de la commande test et notification du vendor');
 

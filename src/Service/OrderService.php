@@ -20,14 +20,12 @@ class OrderService
     {
         $vendor = $this->inMemory->findVendorById($dto->vendorId);
 
-        if ($vendor === null) {
-            throw new \InvalidArgumentException(
-                sprintf('Vendor avec l\'id %d introuvable', $dto->vendorId)
-            );
+        if (null === $vendor) {
+            throw new \InvalidArgumentException(sprintf('Vendor avec l\'id %d introuvable', $dto->vendorId));
         }
 
         $order = new Order(
-            id: (int)uniqid(),
+            id: (int) uniqid(),
             vendor: $vendor,
             productName: $dto->productName,
             price: $dto->price,

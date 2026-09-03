@@ -35,7 +35,7 @@ class OrderServiceTest extends TestCase
         $vendor = new Vendor(
             id: 1,
             name: 'vendorTest',
-            email:'testVendor@gmail.com'
+            email: 'testVendor@gmail.com'
         );
 
         $this->orderRepositoryMock
